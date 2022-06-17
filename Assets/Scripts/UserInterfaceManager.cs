@@ -10,9 +10,11 @@ public class UserInterfaceManager : MonoBehaviour
 
     [SerializeField]
     private TextMeshProUGUI playerNameText;
+    [SerializeField]
+    private TMP_InputField inputField;
 
     private string currentPlayerName;
-    
+
     private void Awake()
     {
         Instance = this;
@@ -20,21 +22,30 @@ public class UserInterfaceManager : MonoBehaviour
 
     private void Start()
     {
+        //The chosen name should be loaded and displayed on restart.
         currentPlayerName = GetSavedPlayerName();
+        SetPlayerName();
     }
 
     public void SetPlayerName()
     {
+        //this is delaying the name to displayed after i press a button first  until second press the name is shown
         playerNameText.text = currentPlayerName;
+        currentPlayerName = inputField.text;
+        Debug.Log("SetPlayer():");
     }
 
-    private void SavePlayerName()
+    public void SavePlayerName()
     {
-        
+        //The chosen name should be saved with PlayerPrefs.
+        PlayerPrefs.SetString("Name", playerNameText.text);
+        PlayerPrefs.Save();
+        Debug.Log("SavePlayerName():");
     }
 
     private string GetSavedPlayerName()
     {
-        
+        //get stored data
+        return PlayerPrefs.GetString("Name");
     }
 }
