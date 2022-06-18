@@ -22,30 +22,25 @@ public class UserInterfaceManager : MonoBehaviour
 
     private void Start()
     {
-        //The chosen name should be loaded and displayed on restart.
         currentPlayerName = GetSavedPlayerName();
         SetPlayerName();
     }
 
     public void SetPlayerName()
     {
-        //this is delaying the name to displayed after i press a button first  until second press the name is shown
         playerNameText.text = currentPlayerName;
         currentPlayerName = inputField.text;
-        Debug.Log("SetPlayer():");
     }
 
     public void SavePlayerName()
     {
-        //The chosen name should be saved with PlayerPrefs.
-        PlayerPrefs.SetString("Name", playerNameText.text);
-        PlayerPrefs.Save();
-        Debug.Log("SavePlayerName():");
+        currentPlayerName = inputField.text;
+        playerNameText.text = currentPlayerName;
+        PlayerPrefs.SetString("Name", currentPlayerName);
     }
 
-    private string GetSavedPlayerName()
+    public string GetSavedPlayerName()
     {
-        //get stored data
         return PlayerPrefs.GetString("Name");
     }
 }
