@@ -43,4 +43,9 @@ public class UserInterfaceManager : MonoBehaviour
     {
         return PlayerPrefs.GetString("Name");
     }
+
+    public void DeletSavedName()
+    {
+        PlayerPrefs.DeleteKey("Name");
+    }
 }
