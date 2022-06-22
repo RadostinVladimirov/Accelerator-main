@@ -13,9 +13,11 @@ public class ClockPlayerValue : MonoBehaviour
     private int hour;
     private int minute;
 
+    [SerializeField]
     private int playerEnterValue;
     private void Start()
     {
+        playerEnterValue = GetPlayerValue();
         PlayerCount();
     }
 
@@ -23,8 +25,8 @@ public class ClockPlayerValue : MonoBehaviour
     {
         playerEnterValue++;
         PlayerPrefs.SetInt("Player", playerEnterValue);
-        PlayerPrefs.GetInt("Player");
-        playerEnterValueDisplay.text = "Player Enter Value" + playerEnterValue;
+        PlayerPrefs.Save();
+        playerEnterValueDisplay.text = "Player Enter Value: " + playerEnterValue;
     }
 
     private void Update()
@@ -43,5 +45,12 @@ public class ClockPlayerValue : MonoBehaviour
     public void ResetPlayerCount()
     {
         PlayerPrefs.DeleteKey("Player");
+        playerEnterValue = GetPlayerValue();
+        playerEnterValueDisplay.text = "Player Enter Value: " + playerEnterValue.ToString();
+    }
+
+    private int GetPlayerValue()
+    {
+        return PlayerPrefs.GetInt("Player"); 
     }
 }

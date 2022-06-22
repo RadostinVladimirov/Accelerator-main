@@ -13,6 +13,7 @@ public class UserInterfaceManager : MonoBehaviour
     [SerializeField]
     private TMP_InputField inputField;
 
+    [SerializeField]
     private string currentPlayerName;
 
     private void Awake()
@@ -47,5 +48,8 @@ public class UserInterfaceManager : MonoBehaviour
     public void DeletSavedName()
     {
         PlayerPrefs.DeleteKey("Name");
+        currentPlayerName = GetSavedPlayerName();
+        inputField.text = currentPlayerName;
+        playerNameText.text = currentPlayerName;
     }
 }
