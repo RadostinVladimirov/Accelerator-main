@@ -15,6 +15,8 @@ public class UserInterfaceManager : MonoBehaviour
 
     [SerializeField]
     private string currentPlayerName;
+    [SerializeField]
+    private string clockUrl;
 
     private void Awake()
     {
@@ -51,5 +53,10 @@ public class UserInterfaceManager : MonoBehaviour
         currentPlayerName = GetSavedPlayerName();
         inputField.text = currentPlayerName;
         playerNameText.text = currentPlayerName;
+    }
+
+    public void OpenGoogleClock()
+    {
+        Application.OpenURL(clockUrl);
     }
 }
