@@ -10,9 +10,14 @@ public class UserInterfaceManager : MonoBehaviour
 
     [SerializeField]
     private TextMeshProUGUI playerNameText;
+    [SerializeField]
+    private TMP_InputField inputField;
 
+    [SerializeField]
     private string currentPlayerName;
-    
+    [SerializeField]
+    private string clockUrl;
+
     private void Awake()
     {
         Instance = this;
@@ -21,20 +26,37 @@ public class UserInterfaceManager : MonoBehaviour
     private void Start()
     {
         currentPlayerName = GetSavedPlayerName();
+        SetPlayerName();
     }
 
     public void SetPlayerName()
     {
         playerNameText.text = currentPlayerName;
+        currentPlayerName = inputField.text;
     }
 
-    private void SavePlayerName()
+    public void SavePlayerName()
     {
-        
+        currentPlayerName = inputField.text;
+        playerNameText.text = currentPlayerName;
+        PlayerPrefs.SetString("Name", currentPlayerName);
     }
 
-    private string GetSavedPlayerName()
+    public string GetSavedPlayerName()
     {
-        
+        return PlayerPrefs.GetString("Name");
+    }
+
+    public void DeletSavedName()
+    {
+        PlayerPrefs.DeleteKey("Name");
+        currentPlayerName = GetSavedPlayerName();
+        inputField.text = currentPlayerName;
+        playerNameText.text = currentPlayerName;
+    }
+
+    public void OpenGoogleClock()
+    {
+        Application.OpenURL(clockUrl);
     }
 }
