@@ -7,34 +7,21 @@ using UnityEngine;
 public class UserInterfaceManager : MonoBehaviour
 {
     public static UserInterfaceManager Instance { get; private set; }
+    private bool isMainMenu;
 
-    [SerializeField]
-    private TextMeshProUGUI playerNameText;
-
-    private string currentPlayerName;
-    
+    private bool isOptionMenuOpen;
     private void Awake()
     {
         Instance = this;
     }
 
-    private void Start()
+    public void MainMenu()
     {
-        currentPlayerName = GetSavedPlayerName();
+        isMainMenu = true;
     }
 
-    public void SetPlayerName()
+    public void OptionMenuPopup()
     {
-        playerNameText.text = currentPlayerName;
-    }
-
-    private void SavePlayerName()
-    {
-        
-    }
-
-    private string GetSavedPlayerName()
-    {
-        
+        isOptionMenuOpen = true;
     }
 }
