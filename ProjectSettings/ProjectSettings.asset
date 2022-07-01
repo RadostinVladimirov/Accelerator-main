@@ -22,7 +22,7 @@ PlayerSettings:
   m_SplashScreenOverlayOpacity: 1
   m_SplashScreenAnimation: 1
   m_SplashScreenLogoStyle: 1
-  m_SplashScreenDrawMode: 1
+  m_SplashScreenDrawMode: 0
   m_SplashScreenBackgroundAnimationZoom: 1
   m_SplashScreenLogoAnimationZoom: 1
   m_SplashScreenBackgroundLandscapeAspect: 1
@@ -40,8 +40,6 @@ PlayerSettings:
     width: 1
     height: 1
   m_SplashScreenLogos:
-  - logo: {fileID: 10404, guid: 0000000000000000e000000000000000, type: 0}
-    duration: 2
   - logo: {fileID: 21300000, guid: 0d9c450daa18c0e44a0f0f91a76b3d5d, type: 3}
     duration: 4.4
   m_VirtualRealitySplashScreen: {fileID: 0}
@@ -687,8 +685,8 @@ PlayerSettings:
   ps4IncludedModules: []
   ps4attribVROutputEnabled: 0
   monoEnv: 
-  splashScreenBackgroundSourceLandscape: {fileID: 21300000, guid: 41e74d67b8d45b34aa038bf41d92d833, type: 3}
-  splashScreenBackgroundSourcePortrait: {fileID: 21300000, guid: 41e74d67b8d45b34aa038bf41d92d833, type: 3}
+  splashScreenBackgroundSourceLandscape: {fileID: 21300000, guid: fe7588df9e128ec48a46f2e523249fc6, type: 3}
+  splashScreenBackgroundSourcePortrait: {fileID: 0}
   blurSplashScreenBackground: 0
   spritePackerPolicy: 
   webGLMemorySize: 16
