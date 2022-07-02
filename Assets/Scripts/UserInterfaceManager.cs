@@ -3,38 +3,49 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class UserInterfaceManager : MonoBehaviour
 {
     public static UserInterfaceManager Instance { get; private set; }
 
-    [SerializeField]
-    private TextMeshProUGUI playerNameText;
 
-    private string currentPlayerName;
-    
     private void Awake()
     {
         Instance = this;
     }
 
-    private void Start()
+    public void ExitGame()
     {
-        currentPlayerName = GetSavedPlayerName();
+        Application.Quit();
+        WhereIam("ExitGame");
     }
 
-    public void SetPlayerName()
+    public void WhereIam(string page)
     {
-        playerNameText.text = currentPlayerName;
+        if(page == "MainMenu")
+        {
+            Debug.Log("Main Menu Entered");
+        }
+        else if(page == "OptionsMenu")
+        {
+            Debug.Log("Options Menu Opened");
+        }
+        else if(page == "LoadGame")
+        {
+            Debug.Log("Loading Saved Game");
+        }
+        else if (page == "NewGame")
+        {
+            Debug.Log("Loading New Game");
+        }
+        else if (page == "ExitGame")
+        {
+            Debug.Log("Exit Game");
+        }
     }
 
-    private void SavePlayerName()
-    {
-        
-    }
-
-    private string GetSavedPlayerName()
-    {
-        
-    }
 }
+
+
+
