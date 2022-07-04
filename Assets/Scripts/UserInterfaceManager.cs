@@ -5,44 +5,33 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
+public enum PageFinder 
+{  
+    Main_Menu, 
+    Options_Menu, 
+    New_Game
+}
+
 public class UserInterfaceManager : MonoBehaviour
 {
     public static UserInterfaceManager Instance { get; private set; }
+    public PageFinder Page;
 
 
     private void Awake()
     {
         Instance = this;
+        Page = PageFinder.Options_Menu;
     }
 
     public void ExitGame()
     {
         Application.Quit();
-        WhereIam("ExitGame");
     }
 
-    public void WhereIam(string page)
+    public void WhereIam(int screen)
     {
-        if(page == "MainMenu")
-        {
-            Debug.Log("Main Menu Entered");
-        }
-        else if(page == "OptionsMenu")
-        {
-            Debug.Log("Options Menu Opened");
-        }
-        else if(page == "LoadGame")
-        {
-            Debug.Log("Loading Saved Game");
-        }
-        else if (page == "NewGame")
-        {
-            Debug.Log("Loading New Game");
-        }
-        else if (page == "ExitGame")
-        {
-            Debug.Log("Exit Game");
-        }
+        Page = (PageFinder)screen;
     }
 
 }

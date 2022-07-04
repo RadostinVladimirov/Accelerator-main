@@ -12,6 +12,6 @@ public class NewGameScript : MonoBehaviour
     public void NewGame()
     {
         SceneManager.LoadScene("Game");
-        UI_manager.WhereIam("NewGame");
+        UI_manager.WhereIam(2);
     }
 }

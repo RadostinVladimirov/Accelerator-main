@@ -11,6 +11,7 @@ public class MainMenuController : MonoBehaviour
     [SerializeField]
     private UserInterfaceManager UI_manager;
 
+
     void Awake()
     {
         main_menu.SetActive(false);
@@ -21,6 +22,6 @@ public class MainMenuController : MonoBehaviour
     {
         yield return new WaitForSeconds(3.5f);
         main_menu.SetActive(true);
-        UI_manager.WhereIam("MainMenu");
+        UI_manager.WhereIam(0);
     }
 }

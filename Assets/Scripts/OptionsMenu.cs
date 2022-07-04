@@ -19,13 +19,13 @@ public class OptionsMenu : MonoBehaviour
     public void OpenMenu()
     {
         options_menu.SetActive(true);
-        UI_manager.WhereIam("OptionsMenu");
+        UI_manager.WhereIam(1);
     }
 
     public void CloseMenu()
     {
         options_menu.SetActive(false);
-        UI_manager.WhereIam("MainMenu");
+        UI_manager.WhereIam(0);
     }
 
    
