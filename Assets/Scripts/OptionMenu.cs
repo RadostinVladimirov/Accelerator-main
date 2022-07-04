@@ -4,9 +4,14 @@ using UnityEngine;
 
 public class OptionMenu : MonoBehaviour
 {
-   public void ShowOptionMenu()
+    public void ShowOptionMenu()
     {
-        UserInterfaceManager.Instance.OptionMenuPopup();
+        UserInterfaceManager.Instance.CurrentState = UserInterfaceManager.UIScreenPanel.Active;
         gameObject.SetActive(true);
+    }
+
+    private void OnDisable()
+    {
+        UserInterfaceManager.Instance.CurrentState = UserInterfaceManager.UIScreenPanel.Notactive;
     }
 }
