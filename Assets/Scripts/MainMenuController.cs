@@ -12,7 +12,7 @@ public class MainMenuController : MonoBehaviour
     private UserInterfaceManager UI_manager;
 
 
-    void Awake()
+    public void Awake()
     {
         main_menu.SetActive(false);
         StartCoroutine(MenuIntro());

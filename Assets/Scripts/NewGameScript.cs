@@ -9,9 +9,18 @@ public class NewGameScript : MonoBehaviour
     [SerializeField]
     private UserInterfaceManager UI_manager;
 
+    public OptionsMenu options_menu;
+
     public void NewGame()
     {
-        SceneManager.LoadScene("Game");
-        UI_manager.WhereIam(2);
+        if(options_menu.MenuActive == true)
+        {
+            options_menu.CloseMenu();
+        }
+        else if(options_menu. MenuActive == false)
+        {
+            SceneManager.LoadScene("Game");
+            UI_manager.WhereIam(2);
+        }       
     }
 }

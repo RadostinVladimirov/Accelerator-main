@@ -17,6 +17,8 @@ public class UserInterfaceManager : MonoBehaviour
     public static UserInterfaceManager Instance { get; private set; }
     public PageFinder Page;
 
+    public OptionsMenu options_menu;
+
 
     private void Awake()
     {
@@ -26,7 +28,15 @@ public class UserInterfaceManager : MonoBehaviour
 
     public void ExitGame()
     {
-        Application.Quit();
+        if(options_menu.MenuActive == true)
+        {
+            options_menu.CloseMenu();
+        }
+        else if(options_menu.MenuActive == false)
+        {
+            Application.Quit();
+        }
+        
     }
 
     public void WhereIam(int screen)
