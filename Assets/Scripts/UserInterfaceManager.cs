@@ -17,24 +17,4 @@ public class UserInterfaceManager : MonoBehaviour
     {
         Instance = this;
     }
-
-    private void Start()
-    {
-        currentPlayerName = GetSavedPlayerName();
-    }
-
-    public void SetPlayerName()
-    {
-        playerNameText.text = currentPlayerName;
-    }
-
-    private void SavePlayerName()
-    {
-        
-    }
-
-    private string GetSavedPlayerName()
-    {
-        
-    }
 }
