@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class UIManager : MonoBehaviour
+public class Animal : MonoBehaviour,IDroppable
 {
-   
-    void Start()
+    public Dropdown dropDown { get ; set; }
+
+    public void ExpandDropDown()
     {
         
     }

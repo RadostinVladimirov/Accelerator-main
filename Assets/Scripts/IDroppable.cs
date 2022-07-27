@@ -3,12 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class UIManager : MonoBehaviour
+public interface IDroppable
 {
-   
-    void Start()
-    {
-        
-    }
-
+    public void ExpandDropDown();
 }
