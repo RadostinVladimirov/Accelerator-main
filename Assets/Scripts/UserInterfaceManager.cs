@@ -3,38 +3,48 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
+
+public enum PageFinder 
+{  
+    Main_Menu, 
+    Options_Menu, 
+    New_Game
+}
 
 public class UserInterfaceManager : MonoBehaviour
 {
     public static UserInterfaceManager Instance { get; private set; }
+    public PageFinder Page;
 
-    [SerializeField]
-    private TextMeshProUGUI playerNameText;
+    public OptionsMenu options_menu;
 
-    private string currentPlayerName;
-    
+
     private void Awake()
     {
         Instance = this;
+        Page = PageFinder.Options_Menu;
     }
 
-    private void Start()
+    public void ExitGame()
     {
-        currentPlayerName = GetSavedPlayerName();
-    }
-
-    public void SetPlayerName()
-    {
-        playerNameText.text = currentPlayerName;
-    }
-
-    private void SavePlayerName()
-    {
+        if(options_menu.MenuActive == true)
+        {
+            options_menu.CloseMenu();
+        }
+        else if(options_menu.MenuActive == false)
+        {
+            Application.Quit();
+        }
         
     }
 
-    private string GetSavedPlayerName()
+    public void WhereIam(int screen)
     {
-        
+        Page = (PageFinder)screen;
     }
+
 }
+
+
+
