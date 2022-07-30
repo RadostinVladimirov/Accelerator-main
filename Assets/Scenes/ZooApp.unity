@@ -560,6 +560,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: abfa2b20230e6c148b0b025af3ab5eed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  CategorieAreaDropDown: {fileID: 597097962}
 --- !u!1 &359909805
 GameObject:
   m_ObjectHideFlags: 0
@@ -984,6 +985,7 @@ GameObject:
   - component: {fileID: 597097964}
   - component: {fileID: 597097963}
   - component: {fileID: 597097962}
+  - component: {fileID: 597097965}
   m_Layer: 5
   m_Name: Area_Category_Dropdown
   m_TagString: Untagged
@@ -1115,6 +1117,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 597097960}
   m_CullTransparentMesh: 1
+--- !u!114 &597097965
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 597097960}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c48811996a80664199e316e8f374b6a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animalDropDown: {fileID: 1527762111}
 --- !u!1 &597331954
 GameObject:
   m_ObjectHideFlags: 0

@@ -3,9 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Animal : MonoBehaviour,IDroppable
+public class Animal : MonoBehaviour
 {
-    public Dropdown dropDown { get ; set; }
+    private Dropdown dropDown;
+    private void Start()
+    {
+        dropDown = GetComponent<Dropdown>();
+    }
 
     public void ExpandDropDown()
     {

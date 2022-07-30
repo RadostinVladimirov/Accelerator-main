@@ -3,12 +3,25 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class AreaCategory : MonoBehaviour, IDroppable
+public class AreaCategory : MonoBehaviour
 {
-    public Dropdown dropDown { get; set; }
+    private Dropdown dropDown;
 
-    public void ExpandDropDown()
+    [SerializeField] private Dropdown animalDropDown;
+
+     void Start()
     {
-       
+        dropDown = GetComponent<Dropdown>();
+    }
+
+     void Update()
+    {
+        dropDown.onValueChanged.AddListener(delegate {
+            DropdownValueChanged(dropDown);
+        });
+    }
+    public void DropdownValueChanged(object dropDown)
+    {
+        animalDropDown.Show();
     }
 }
